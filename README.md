@@ -30,7 +30,7 @@ The method has two phases:
 
 This repository derives the full DDPM training objective from first principles (the evidence lower bound and its closed form simplification), then implements and trains the forward and reverse processes from scratch, without relying on any prebuilt diffusion library.
 
-## Results at a Glance
+## Some Results
 
 Three CIFAR-10 architectures, same training budget, very different outcomes. Each grid shows samples generated from pure noise.
 
