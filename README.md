@@ -9,7 +9,8 @@
 </p>
 
 <p align="center">
-  <sub><b>Forward process</b> <i>q</i> gradually destroys an image into noise. The <b>reverse process</b> <i>p<sub>θ</sub></i>, a learned U-Net, turns noise back into a coherent sample.</sub>
+  <sub><b>Figure from Ho, Jain & Abbeel (2020), Denoising Diffusion Probabilistic Models, arXiv:2006.11239 (Fig. 2). Not our work; reproduced here for illustration.
+The forward process q gradually destroys an image into noise. The reverse process p<sub>θ</sub>, a learned neural network (a U-Net in our implementation), turns noise back into a coherent sample.</sub>
 </p>
 
 **Authors:** Hoang Dung Vu Minh and Christopher Won
