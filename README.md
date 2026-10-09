@@ -15,7 +15,7 @@
 
 **Authors:** Hoang Dung Vu Minh and Christopher Won
 
-**Quick links:** [Full report (PDF)](paper.pdf) · [Slides (PDF)](slides.pdf) · [Results](#results) · [Notebooks](#repository-contents) · [Running the code](#running-the-notebooks)
+**Quick links:** [Full technical report (PDF)](technical_report.pdf) · [Slides (PDF)](slides.pdf) · [Results](#results) · [Notebooks](#repository-contents) · [Running the code](#running-the-notebooks)
 
 ---
 
@@ -53,7 +53,7 @@ Three CIFAR-10 architectures, same training budget, very different outcomes. Eac
 
 The forward process turns an image into noise through a fixed Markov chain of Gaussian steps. Because this process is fixed rather than learned, it has a closed form expression at any timestep, which makes training efficient: a noisy version of an image at any point in the chain can be sampled directly, without simulating every intermediate step.
 
-The reverse process is where learning happens. A U-Net is trained to predict the noise that was added at a given timestep, conditioned on the noisy image and the timestep itself. Training minimizes a simplified form of the evidence lower bound, derived in full in [`paper.pdf`](paper.pdf) (Sections 4.1 to 4.3), which reduces to a straightforward noise prediction loss.
+The reverse process is where learning happens. A U-Net is trained to predict the noise that was added at a given timestep, conditioned on the noisy image and the timestep itself. Training minimizes a simplified form of the evidence lower bound, derived in full in [`technical_report.pdf`](technical_report.pdf) (Sections 4.1 to 4.3), which reduces to a straightforward noise prediction loss.
 
 Once trained, generating a new sample means starting from pure Gaussian noise and repeatedly applying the learned reverse step, gradually revealing a coherent image.
 
@@ -164,7 +164,7 @@ All models were implemented directly in PyTorch (`torch`, `torch.nn`, `torch.nn.
 
 | File | Description |
 |---|---|
-| [`paper.pdf`](paper.pdf) | Full written report: theoretical derivation of the DDPM objective, methodology, results, architectural discussion, and proofs |
+| [`technical_report.pdf`](technical_report.pdf) | Full written report: theoretical derivation of the DDPM objective, methodology, results, architectural discussion, and proofs |
 | [`slides.pdf`](slides.pdf) | Presentation slides summarizing the project |
 | [`MNIST_Diffusion_model_1_reproducible.ipynb`](MNIST_Diffusion_model_1_reproducible.ipynb) | Baseline U-Net trained on MNIST |
 | [`MNIST_Diffusion_model_2_reproducible.ipynb`](MNIST_Diffusion_model_2_reproducible.ipynb) | Improved U-Net on MNIST, adds an extra encoder/decoder block, a self attention mechanism, and transformer style time embeddings |
@@ -197,4 +197,4 @@ No additional setup or external data download is required. Each notebook fetches
 - Kapila, N., & collaborators. (2024). *CNNtention: Can CNNs do better with Attention?* arXiv:2412.11657
 - Wang, Y., Chen, Y., Liu, X., & Zhao, L. (2024). *Development of skip connection in deep neural networks for computer vision and medical image analysis: A survey*. arXiv:2405.01725
 
-Full derivations, proofs, and additional figures are available in [`paper.pdf`](paper.pdf).
+Full derivations, proofs, and additional figures are available in [`technical_report.pdf`](technical_report.pdf).
